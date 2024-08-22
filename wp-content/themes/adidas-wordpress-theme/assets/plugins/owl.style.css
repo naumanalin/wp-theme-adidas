@@ -1,0 +1,58 @@
+.item {
+    justify-content: space-around;
+}
+
+/* ------------------------------
+    owl nav's for first slider
+--------------------------------- */
+
+.owl-next, .owl-prev {
+    position: absolute;
+}
+
+.owl-next {
+    bottom: 45%;
+    right: 0;
+}
+
+.owl-prev {
+    bottom: 45%;
+    left: 0;
+}
+.owl-prev img, .owl-next img {
+    width: 15px;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: transparent;
+}
+
+/* ------------------------------
+    owl nav's for second slider
+--------------------------------- */
+
+
+
+/* -------------
+    dot
+ ---------------*/
+.owl-theme .owl-dots .owl-dot span {
+    width: 18px;
+    height: 6px;
+    margin: 5px 5px;
+    /* background: #D6D6D6; */
+    background: red !important;
+    display: block;
+    /* -webkit-backface-visibility: visible; */
+    transition: opacity .2s ease;
+    border-radius: 0px;
+}
+
+.owl-dot span {
+    background-color: var(--secondary-text-color) !important;
+}
+
+.owl-dot.active span {
+    background-color: var(--primary-text-color) !important;
+}
+  

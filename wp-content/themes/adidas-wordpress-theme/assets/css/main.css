@@ -1,0 +1,808 @@
+
+
+/* resets */
+*   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+/*    color: #fff;*/
+}
+
+:root {
+    --primary-color: #fff ;
+    --secondary-color:#d6e4e1 ;
+    --accent-color: #2A8347;
+    --bg-dark-color: #10372B ;
+    --bg-accent-color: #155938;
+    --bg-light-color: #2A8347;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+
+a:visited   {
+    color: #fff;
+}
+
+/* utility class */
+
+.container {
+    max-width: 1100px;
+    padding: 0 10px;  /* 0 15px */
+    margin: 0 auto;
+}
+
+.flex   {
+    display: flex;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.w-30 {
+    width: calc(30% - 10px);
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-70 {
+    width: calc(70% - 10px);
+}
+
+.p-relative {
+    position: relative;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-white {
+    color: #fff;
+}
+
+.green-a,
+.green-a:visited {
+    color: green;
+    text-decoration: underline;
+}
+
+/* notification bar */
+
+.notification-text {
+    width: 94%;
+}
+
+
+#cross-btn  {
+    width:  20px;
+    height: 20px;
+    background-color:   green;
+    border-radius:  50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:   absolute;
+    top:    10px;
+    right:  30px;
+    cursor: pointer;
+}
+
+/* logo bar ------------------------------------------------------------------------------- */
+#logo-bar {
+    width: 100%;
+    background-color: var(--bg-dark-color);
+    background-image: url('../images/pattern-bg.png');
+    background-size: 100px;
+}
+
+.logo-bar-container {
+   justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.btn {
+    clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%);
+    background-image: url('../images/pattern-bg.png');
+    background-size: cover;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.btn:hover {
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow on hover */
+}
+
+.btn-primary {
+        background-color: var(--bg-light-color);
+}
+
+.btn-secondary {
+        background-color: var(--bg-accent-color);
+}
+
+
+/* navigation ------------------------------------------------------------------------- */
+
+#nav-section {
+    width: 100%;
+    background-color: var(--bg-accent-color);
+    background-image: url('../images/pattern-bg.png');
+    background-size: 100px;
+}
+
+.nav-container {
+    align-items: center;
+    padding: 3px;
+}
+    .main-navigation {
+        display: block;
+    }
+
+#menu-btn {
+    display: none;
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu > li > a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-transform: uppercase;
+}
+
+/* Show background on hover */
+.menu > li:hover > a {
+    background-color: var(--bg-light-color);
+    clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+}
+
+/* Sub-menu styles */
+.menu li ul.sub-menu {
+    display: none; /* Hide sub-menus by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-light-color);
+    background-image: url('../images/pattern-bg.png');
+    z-index: 1;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.menu li:hover > ul.sub-menu {
+    display: block; /* Show sub-menu on hover */
+}
+
+ul.sub-menu li a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: block;
+    text-decoration: none;
+}
+
+ul.sub-menu li a:hover {
+    background-color: var(--bg-dark-color);
+}
+
+/* Arrow indicators for items with nested sub-menus */
+.menu li ul.sub-menu li:has(ul.sub-menu)::before {
+    content: '>';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+}
+
+/* Nested sub-menu styles */
+.menu li ul.sub-menu li ul.sub-menu {
+    display: none; /* Hide nested sub-menus by default */
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: var(--bg-light-color);
+    background-image: url('../images/pattern-bg.png');
+}
+
+.menu li ul.sub-menu li:hover > ul.sub-menu {
+    display: block; /* Show nested sub-menu on hover */
+}
+
+/* Deeper nested sub-menu styles */
+.menu li ul.sub-menu li ul.sub-menu li ul.sub-menu {
+    display: none; /* Hide deeper nested sub-menus by default */
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: var(--bg-light-color);
+}
+
+.menu li ul.sub-menu li ul.sub-menu li:hover > ul.sub-menu {
+    display: block; /* Show deeper nested sub-menu on hover */
+}
+
+/* Styling for links */
+li a {
+    overflow: hidden;
+}
+
+/* nav form --------------------------------------------------------------------------- */
+
+.nav-form {
+    background-color: var(--bg-dark-color);
+    background-image: url('../images/pattern-bg.png');
+    background-size: 100px;
+    margin: 8px 0;
+}
+
+.nav-form input[type="text"] {
+    background: transparent;
+    border: none;
+    width: 150px;
+    color: #fff; /* Add color to input text */
+    padding: 0.5rem;
+}
+
+.nav-btn {
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: 50px;
+    z-index: 44444;
+}
+
+
+/* home page content -------------------------------------------------------------------- */
+
+/* hero section ------------------------------------------------------------------------- */
+
+
+/* page content section ----------------------------------------------------------------- */
+
+/*  */
+
+
+#main-page{
+    background-color: var(--bg-dark-color);
+    background-image: url('../images/pattern-bg.png');
+    background-size: 100px;
+}
+
+.parent-container{ 
+    justify-content: space-between;
+}
+
+.chilc-container {
+    
+}
+
+.aside {
+}
+
+#main-page{
+   padding: 90px 0;
+}
+
+/* cpt support slider */
+
+.custom_slider_2 {
+    width: 95%;
+}
+
+.slider-post-wraper {
+    background-color: #15604B;
+    background-image: url('../images/pattern-bg.png');
+    background-size: 50px;
+    margin: 15px;
+    padding: 10px;
+}
+
+.post-thumbnail img {
+    width: 144px;
+    height: 144px;
+    margin: 0 auto;
+    }
+
+.a-post-title{
+    font-family: Oswald;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;    
+    text-transform:capitalize ;
+    padding: 15px 0;
+    text-decoration: none;
+}
+
+.a-post-title:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+.a-post-title:visited {
+    color: #fff;
+}
+
+
+/* second slider arrows and dots */
+ 
+/* dots ki jaga minus shap achive krna k liya in ma color transparent krna hai. 1.5 hours lag gy thai talash krty krty */
+.slick-dots li button:before { 
+    color: transparent !important;
+    background: #fff;
+    width: 20px !important;
+    height: 5px !important;
+}
+
+.slick-dots li.slick-active button:before {
+    color: transparent !important;
+}
+
+
+/* last three post section ---------------------------------------------------------------- */
+
+.last-post-wrapper {
+    width: 100%;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.post-item {
+    width: calc(33.33% - 10px);
+    min-height: auto ;
+    background-color: var(--bg-light-color);
+    background-image: url('../images/pattern-bg.png');
+    position: relative;
+}
+
+.latest-post-thumbnail {
+    width: 100%;
+    height: 162px;
+    background-color: #fff;
+}
+.latest-post-thumbnail a > img {
+    width: 100%;
+    height: 100%;
+}
+
+.the-title,
+.the-title:active {
+    color: #FFF;
+    font-family: Oswald;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 15px 0;
+    padding: 0 10px;
+    text-decoration: none;
+}
+
+
+/* Style for the title */
+.the-title h2 a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    word-break: break-word; /* Allows long words to break and wrap onto the next line */
+    overflow-wrap: break-word; /* Ensures that long words break to prevent overflow */
+    white-space: normal; /* Allows the text to wrap onto the next line */
+    line-height: 1.2; /* Reduces space between lines */
+    display: block; /* Ensures the block formatting context for proper alignment */
+    hyphens: auto; /* Automatically adds hyphens where appropriate for word wrapping (optional) */
+}
+
+/* Additional styling for improved readability */
+.the-title h2 {
+    margin: 0; /* Removes default margin to control spacing precisely */
+    padding: 0; /* Removes default padding if any */
+}
+
+.the-description {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #fffdfd;
+    opacity: 0.9;
+    padding: 0 5px;
+}
+
+.btn-read-more {
+    width: 100%;
+    background-color: var(--bg-accent-color);
+    background-image: url('../images/pattern-bg.png');
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    color: #FFF;
+    padding: 10px ;
+    font-family: Oswald;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.btn-read-more:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.see-all {
+    width: 100%;
+    text-align: right;
+    padding: 5px 15px;
+}
+
+
+/* sticky post / zig zag section -------------------------------- */
+/* sticky post */
+
+.sticky-post {
+    background-color: var(--bg-accent-color);
+    background-image: url('../images/pattern-bg.png');
+    background-size: 100px;
+    min-height: 240px;
+    margin: 0;
+
+}
+
+.sticky-content {
+    padding: 30px 15px 15px 15px;
+    width: 45%;
+}
+
+.sticky-content h3 {
+    color: #FFF;
+    font-family: Oswald;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.sticky-content p {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.sticky-post-thumbnail {
+    width: 55%;
+}
+
+.sticky-post-thumbnail img:first-child{
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 10% 100%);
+
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.sticky-post:nth-child(2) {
+    flex-direction: row-reverse;
+}
+
+.sticky-post:nth-child(2) .sticky-post-thumbnail img{
+    clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%) !important;
+}
+
+/* content form section -------------------------------------------------------------  */
+
+#contact-form {
+    background-color: var(--bg-light-color);
+    background-image: url('../images/pattern-bg.png');
+    background-size: 100px;
+    padding: 40px 0;
+}
+
+.form-parent-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-form {
+    max-width: 630px;
+}
+
+.form-group {
+    gap: 30px;
+}
+
+.form-item {
+    text-align: start;
+    margin: 15px 0;
+}
+
+.form-item label,
+.message-field-group label{
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.25rem;
+    
+}
+.form-input {
+    border: none;
+    outline: none;
+    width: 300px;
+}
+
+#country {
+    height: 35px;
+    background: #fff;
+}
+
+input[type="radio"] { 
+    width: 30px;
+    margin: 0 10px 0 10px;
+    accent-color: #28a745;
+}
+
+#message {
+    min-height: 150px;
+}
+
+.submit-btn-container {
+    justify-content: center;
+    margin: 20px auto;
+}
+
+#submit-btn {
+    border: none;
+    outline: none;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 800;
+    padding: 10px 15px;
+    background-color: var(--bg-dark-color);
+    background-image: url('../images/pattern-bg.png');
+    cursor: pointer;
+}
+
+
+/* footer ------------------------------------------------------------------ */
+
+.site-footer {
+    width: 100%;
+    background-color: var(--bg-dark-color);
+    background-image: url('../images/pattern-bg.png');
+    background-size: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-pages {
+    
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 25px 0 10px 0;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.footer-icons a:hover {
+    opacity: 0.7;
+}
+.copy-right {
+    color: #fff;
+margin: 10px 0 10px 0;
+}
+
+
+/*-------------------------------------------------------------------------*/
+
+.events-widget {
+  background: url("../images/pattern-bg.png"),
+    linear-gradient(#1b7d3b 100%, #1b7d3b 100%);
+  counter-reset: section;
+}
+ .aside .events-widget .title {
+  background: url("../images/pattern-bg.png"),
+    linear-gradient(#07512d 100%, #07512d 100%);
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 9px 19px;
+  color: #fff;
+}
+.aside .events-widget ul {
+  padding: 21px 19px 8px 19px;
+  margin: 0;
+}
+.aside .events-widget li {
+  list-style: none;
+  display: flex;
+  position: relative;
+  margin-bottom: 20px;
+}
+.aside .events-widget li .numbering {
+  color: #1b7d3b;
+  background: #ffffff;
+  height: 46px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  min-width: 46px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aside .events-widget li .numbering:before {
+  counter-increment: section;
+  content: counter(section);
+}
+.aside .events-widget li .detail {
+  padding: 1px 10px 0px 11px;
+  overflow: hidden;
+}
+ .aside .events-widget li .detail h3 {
+  line-height: 1.1;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-overflow: ellipsis;
+}
+.event-a {
+    text-decoration: none;
+}
+.event-a:visited,
+.event-a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.aside .events-widget li .detail h3::after {
+  content: "";
+  width: 100%;
+  margin: auto;
+  background: #ffffff;
+  height: 1px;
+  display: block;
+  position: relative;
+  top: 2px;
+  transition: 0.3s all;
+}
+.aside .events-widget li .detail h3:hover::after {
+  width: 0;
+}
+.aside .events-widget li .detail p {
+  font-size: 16px;
+  position: relative;
+  top: 7px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+
+/*------------- hero start -----------------------------*/
+.here-section {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.hero-section::after {
+    content: '';
+    display: inline-block;
+}
+
+.here-section .container .slider {
+  position: relative;
+}
+
+
+.slide-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  padding: 52px 0;
+}
+
+.slide-item .content-box {
+  width: calc(50% - 10px);
+  padding: 0px 15px 40px 67px;
+}
+.slide-item .content-box .h1 {
+  font-size: 50px;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 33px;
+  word-spacing: 4px;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+ .slide-item .content-box p {
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.4px;
+  word-spacing: -0.1px;
+  line-height: 1.45em;
+}
+.slide-item .play-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(50% - 10px);
+  padding: 20px 26px 26px 40px;
+}
+.slide-item .play-box .play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  padding: 23px 23px 23px 32px;
+  background: #012b1f;
+  opacity: 0.8;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 0.3s all;
+}
+ .slide-item .play-box .thumbnail {
+  width: 250px;
+  height: 250px;
+
+}
+.slide-item .play-box .play-btn:hover {
+  background: #024d37;
+}
+
+.custom_slider_1 .slick-dots {
+    bottom: 5px !important;  
+}
+
+/* --------------------------- hero end -------------------- */
+
+
+/*--------------------------- search results div start ----------------------*/
+
+/* ------------------------- in functions.php file ------------------------*/
+
+/*------------------------- search result end -----------------------*/

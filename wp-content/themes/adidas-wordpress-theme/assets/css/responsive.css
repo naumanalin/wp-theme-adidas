@@ -1,0 +1,185 @@
+/* Base Styles (already provided, some adjustments included) */
+
+/* Responsive Navigation Styles */
+@media (max-width: 810px) {
+    
+    .nav-container {
+        flex-direction: column-reverse;
+    }
+
+    #menu-btn {
+    display: initial;
+    cursor: pointer;
+    }
+
+    .nav-form {
+        width: calc(100% - 65px);
+    }
+    .nav-form input[type="text"] {
+        width: calc(100% - 60px);
+         }
+
+    #nav-left {
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* ---------- nav -----------   */
+    .main-navigation {
+        display: none;
+    }
+
+    .active-nav {
+        display: initial;
+    }
+    .main-navigation ul {
+        flex-direction: column;
+    }
+
+    .main-navigation ul li {
+        width: 100%; 
+    }
+
+    .menu > li:hover > a {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .menu li ul.sub-menu {
+    position: relative;
+    width: 100%;
+    top: 100%;
+    }
+
+    .menu li ul.sub-menu li ul.sub-menu {
+    position: relative;
+    width: 100%;
+    top: 100%;
+    left: 10%;
+    }
+    .menu li ul.sub-menu li ul.sub-menu li ul.sub-menu {
+    position: relative;
+    top: 100%;
+    left: 10%;
+    }
+
+/*  -----------------------------------------------------  */
+
+.parent-container {
+    flex-direction: column;
+}
+
+.w-70 {
+    width: 100%;
+}
+.w-30 {
+    width: 100%;
+}
+
+.aside {
+    margin: 35px 0 0 0;
+}
+
+/* lastest three post */
+.last-post-wrapper {
+    flex-wrap: wrap;
+}
+
+.post-item {
+    width: calc(50% - 10px);
+    max-height: 700px;
+}
+
+/* ---------------- zig-zag section ------------------- */
+.sticky-post {
+    flex-direction: column;
+}
+
+.sticky-post:nth-child(2) {
+    flex-direction: column;
+}
+
+.sticky-content,
+.sticky-post-thumbnail {
+    width: 100%;
+}
+
+.sticky-post-thumbnail img:first-child,
+.sticky-post:nth-child(2) .sticky-post-thumbnail img {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%) !important;
+}
+/* -------- contact us form ------------------------ */
+.empty-div {
+    display: none;
+}
+}
+
+
+@media (max-width: 650px) {
+
+/*  hero section  */
+.slide-item {
+    flex-direction: column;
+}
+
+.slide-item .content-box {
+  width: 100%;
+  padding: 0px 15px 40px 0px;
+}
+.slide-item .play-box {
+  width: 100%;
+  padding: 15px;
+}
+
+.slide-item .content-box .h1 {
+        font-size: 35px;
+}
+
+/* ----- contact us form   */
+.form-parent-container {
+    justify-content: center;
+}
+
+.contact-form {
+    width: 100%;
+}
+
+.form-group {
+    gap: 30px;
+    flex-direction: column;
+}
+
+.form-input {
+    width: 100%;
+}
+}
+
+
+@media (max-width: 500px) { 
+
+/*  logo bar  */
+.logo-bar-container {
+    flex-direction: column;
+}
+
+.logo-bar-right,
+.logo-bar-right a {
+    margin: 0;
+}
+
+.logo-bar-right {
+    width: 100vw;
+    background: #fff;
+}
+.btn {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    width: calc(50% - 4px);
+}
+
+
+
+/* lastest three post */
+.post-item {
+    width: 100%;
+}
+}
